@@ -6,7 +6,7 @@ Comando `llm` para conversar no terminal do Windows com um modelo de linguagem p
 
 ## Propósito
 
-Ter uma LLM local, com menos restrições de recusa, para apoiar a engenharia reversa de eletrônicos que já tenho em mãos: televisores, Amazon Alexa, multimídias chinesas, dispositivos Google, celulares antigos e eletrônicos em geral. Serve para analisar firmware, dumps, logs e código, e para explicar formatos e protocolos, sem depender de serviços em nuvem que bloqueiam esse tipo de pergunta e sem enviar meus arquivos a terceiros.
+Ter uma LLM sob meu controle, rodando no meu PC ou no meu próprio Colab, para apoiar a análise de firmware, formatos e protocolos de eletrônicos que já tenho em mãos: televisores, Amazon Alexa, multimídias chinesas, dispositivos Google, celulares antigos e eletrônicos em geral. O foco é privacidade: firmware, dumps e logs dos meus aparelhos ficam na minha máquina ou no meu Colab, sem passar por serviços de terceiros. Serve para analisar dumps, logs e código e para explicar formatos e protocolos.
 
 O modelo usado é o `DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic` (GGUF, via llama.cpp).
 
@@ -25,7 +25,7 @@ O modelo usado é o `DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic` (GGUF, via l
 |---|---|---|---|---|
 | N0 | PC (CPU, i5-1135G7, 16 GB) | `llm` no terminal | ~2,4 tok/s | nenhum |
 | N1 | Colab GPU T4 | chat dentro do notebook | ~27 tok/s | dentro das regras do Colab |
-| N2 | Colab GPU T4 | `llm` no terminal via túnel | ~27 tok/s | **viola o FAQ do plano gratuito do Colab**; use conta secundária e desconecte ao terminar |
+| N2 | Colab GPU T4 | `llm` no terminal via túnel | ~27 tok/s | expõe o servidor do Colab por túnel; confira os termos de uso do seu plano do Colab antes de usar e desconecte ao terminar |
 
 A medição do N0 foi feita com pouca RAM livre. Não há keep-alive do Colab nem ocultação de tráfego, de propósito. Detalhes do hardware em `docs/ANALISE_HARDWARE.md`.
 

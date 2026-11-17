@@ -1,8 +1,8 @@
 title: "LLM_RE_Local"
-summary: "Comando llm para conversar no terminal com uma LLM própria, no Colab (GPU T4) ou no PC (CPU), com fallback automático. Feita para apoiar engenharia reversa de eletrônicos."
-category: other
-problem: "Serviços de IA em nuvem recusam perguntas de engenharia reversa e exigem enviar firmware, dumps e logs a terceiros. Faltava uma LLM própria, com menos recusas, usável no dia a dia."
-approach: "Cliente de terminal em Python (só biblioteca padrão) sobre o llama-server do llama.cpp. Roda na CPU do PC ou na GPU T4 do Colab via túnel cloudflared com chave, e troca de backend sozinho se o Colab cair, reenviando o histórico."
+summary: "Comando llm para conversar no terminal com uma LLM própria, local ou no Colab (GPU T4), com fallback automático. Privacidade e controle ao analisar firmware e protocolos de eletrônicos próprios."
+category: reverse-engineering
+problem: "Analisar firmware, dumps e logs de aparelhos próprios com IA em nuvem exige enviá-los a terceiros. Faltava uma LLM sob meu controle, no PC ou no meu Colab, para o uso diário."
+approach: "Cliente de terminal em Python (só biblioteca padrão) sobre o llama-server do llama.cpp, para apoiar a análise de firmware, formatos e protocolos. Roda na CPU do PC ou na GPU T4 do Colab via túnel cloudflared com chave, e troca de backend sozinho se o Colab cair, reenviando o histórico."
 results: "Medido: ~2,4 tokens/s na CPU do PC (i5-1135G7, 16 GB, pouca RAM livre) e ~27 tokens/s na GPU T4 do Colab. 7 testes automatizados passando."
 stack: [Python, llama.cpp, Google Colab, cloudflared, PowerShell]
 order: 100
